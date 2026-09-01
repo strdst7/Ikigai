@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", "Zen Old Mincho", ui-serif, Georgia, serif;
+  --font-sans: "Zen Kaku Gothic New", "Zen Old Mincho", ui-sans-serif, system-ui, sans-serif;
+  --font-jp: "Zen Old Mincho", "Zen Kaku Gothic New", serif;
+
+  --color-paper: #f6f1e8;
+  --color-ink: #1f1a14;
+  --color-sumi: #2b2621;
+  --color-sakura: #e8b4b8;
+  --color-hinoki: #d4a574;
+  --color-moss: #6b7a5a;
+  --color-indigo-jp: #2a3a6b;
+  --color-beni: #b5384c;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: #f6f1e8;
+  color: #1f1a14;
+  font-family: "Zen Kaku Gothic New", "Zen Old Mincho", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: "Fraunces", "Zen Old Mincho", ui-serif, Georgia, serif;
+}
+.font-jp {
+  font-family: "Zen Old Mincho", serif;
+}
+
+/* ── ambient washes that sit behind everything ── */
+.ambient::before,
+.ambient::after {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 0;
+}
+.ambient::before {
+  background:
+    radial-gradient(38% 30% at 12% 8%, rgba(41, 82, 122, 0.1), transparent 70%),
+    radial-gradient(34% 28% at 88% 22%, rgba(200, 85, 47, 0.09), transparent 70%);
+  animation: drift 26s ease-in-out infinite;
+}
+.ambient::after {
+  background:
+    radial-gradient(30% 26% at 76% 86%, rgba(76, 107, 60, 0.1), transparent 70%),
+    radial-gradient(30% 24% at 20% 78%, rgba(109, 76, 99, 0.08), transparent 70%);
+  animation: drift 34s ease-in-out infinite reverse;
+}
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -2.5%, 0) scale(1.06);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes softBreathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+.animate-breathe {
+  animation: softBreathe 6s ease-in-out infinite;
+}
+
+@keyframes drawIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-draw {
+  animation: drawIn 0.9s ease-out both;
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
+
+@keyframes sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.grain {
+  background-image:
+    radial-gradient(rgba(31, 26, 20, 0.045) 1px, transparent 1px),
+    radial-gradient(rgba(31, 26, 20, 0.03) 1px, transparent 1px);
+  background-size:
+    3px 3px,
+    7px 7px;
+  background-position:
+    0 0,
+    1px 2px;
+}
+
+textarea:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+::selection {
+  background: rgba(181, 56, 76, 0.18);
+}
+
+/* thin scrollbar for long result pages */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(31, 26, 20, 0.18);
+  border-radius: 99px;
+  border: 3px solid #f6f1e8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
