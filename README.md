@@ -3,11 +3,11 @@
 
 # 🌸 MI4INC. Self-Discovery Series
 
-## A web application built with **React**, **Vite**, **Tailwind CSS**, and **natalengine (VSOP87 ephemeris)** that translates inner self-discovery into interactive visual charts, cross-assessment readings, and actionable life guidance.
+### A web application built with **React**, **Vite**, **Tailwind CSS**, and **natalengine (VSOP87 ephemeris)** that translates inner self-discovery into interactive visual charts, cross-assessment readings, and actionable life guidance.
 
 ---
 
-## 📑 Table of Contents
+### 📑 Table of Contents
 
 - [Overview](#-overview)
 - [The Three Self-Discovery Instruments](#-the-four-self-discovery-instruments)
