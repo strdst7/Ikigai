@@ -1,8 +1,9 @@
+<img width="2240" height="1260" alt="Screenshot 2026-09-02 at 3 29 04 AM" src="https://github.com/user-attachments/assets/943b845a-885a-4c6b-92c8-96bd24af098d" />
+
+
 # 🌸 MI4INC. Self-Discovery Series
 
-> **Three self-discovery instruments — Ikigai, Brain Colour, and Big Five (OCEAN), — in English and Bahasa Melayu.**
-
-A web application built with **React**, **Vite**, **Tailwind CSS**, and **natalengine (VSOP87 ephemeris)** that translates inner self-discovery into interactive visual charts, cross-assessment readings, and actionable life guidance.
+## A web application built with **React**, **Vite**, **Tailwind CSS**, and **natalengine (VSOP87 ephemeris)** that translates inner self-discovery into interactive visual charts, cross-assessment readings, and actionable life guidance.
 
 ---
 
